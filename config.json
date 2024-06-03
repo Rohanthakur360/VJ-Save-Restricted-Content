@@ -4,3 +4,10 @@
     "HASH": "",
     "STRING": null
 }
+try:
+    ADMINS=[]
+    for x in (os.environ.get("ADMINS", "5631563685").split()):
+        ADMINS.append(int(x))
+except ValueError:
+        raise Exception("Your Admins list does not contain valid integers.")
+ADMINS.append(OWNER)
